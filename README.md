@@ -4,8 +4,11 @@ Used Framework:
 
 Steps To Setup the site
   1. Clone the code to you development environment/webserver 
+  
+  ```
     $ cd [/application/path]
     $ git clone https://github.com/castlino/brighte-product-site .
+  ```
   2. Setup your webserver domain to point to /public folder. 
       ex:
       
@@ -28,8 +31,14 @@ Steps To Setup the site
 
   3. Create/Setup your MySQL database, details here will need to be used in step 6 below.
   4. Run composer command below to install dependencies
+  
+  ```
     $ composer install
+  ```
+  
   5. copy .env.example to .env and edit below lines
+  
+    ```
       APP_NAME="[Site name]"
       ..... .. .
       DB_CONNECTION=mysql
@@ -38,14 +47,33 @@ Steps To Setup the site
       DB_DATABASE=[database_name]
       DB_USERNAME==[database_username]
       DB_PASSWORD==[database_user_password]
+    ```
+    
   6. Run command below to generate app key.
-        $ php artisan key:generate
+  
+  ```
+    $ php artisan key:generate
+  ```
+  
   7. Run command below to link storage folder to publicly accessible symlink.
+  
+  ```
     $ php artisan storage:link
+  ```
+  
   8. Run migration with seeding to create database tables and populate
+  
+  ```
     $ php artisan migrate:refresh --seed
+  ```
+  
   9. Restart web Server
-    ex: $ sudo service apache2 restart
+    ex: 
+    
+  ```
+    $ sudo service apache2 restart
+  ```
+  
   10. then visit url...
 
 
@@ -54,8 +82,11 @@ To Run Unit tests just run the below command.
     
 NOTE: 
   To test pagination just run database migrate with seeding as when running unit test/phpunit above, it currently clears the database, so if you need to quickly populate the database with data just run migration refresh with seeder command below to refresh the database and populate:
+  
+  ```
     $ php artisan migrate:refresh --seed
-
+  ```
+  
 Time Taken to finish the app:
  6-7 Hours
  
