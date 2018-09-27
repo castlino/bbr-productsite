@@ -8,6 +8,8 @@ Steps To Setup the site
     $ git clone https://github.com/castlino/brighte-product-site .
   2. Setup your webserver domain to point to /public folder. 
       ex:
+      
+        ```
           <VirtualHost *:80>
             ServerName 192.168.88.88
             ServerAlias brighte-product-site.php7.test
@@ -22,6 +24,7 @@ Steps To Setup the site
               SetHandler "proxy:fcgi://127.0.0.1:9000"
             </FilesMatch>
           </VirtualHost>
+        ```
 
   3. Create/Setup your MySQL database, details here will need to be used in step 6 below.
   4. Run composer command below to install dependencies
@@ -47,7 +50,6 @@ Steps To Setup the site
 
 
 To Run Unit tests just run the below command.
-  1. To run test, just cd to the application folder and run below command:
     $ vendor/bin/phpunit
     
 NOTE: 
